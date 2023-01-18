@@ -1,0 +1,14 @@
+
+body {
+    background: hsl(48, 18%, 83%);
+}
+
+a, a:visited {
+    text-decoration: underline dotted #333;
+    color: #333;
+}
+
+a:hover {
+    background-color: #5a5a5a;
+    color: whitesmoke;
+}
