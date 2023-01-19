@@ -1,0 +1,328 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+
+.title{
+    font-family: 'Lucida Sans';
+    display: grid;
+    justify-items: center;
+}
+h1 {
+    font-weight: bolder;
+}
+a, a:visited {
+    text-decoration: underline dotted #333;
+    color: #333;
+}
+a:hover {
+    background-color: #5a5a5a;
+    color: whitesmoke;
+}
+
+/* layout settings */
+body {
+    background:hsl(48, 18%, 83%);
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+    font-family: 'Bevan', cursive;
+    text-transform: uppercase;
+    margin-inline: auto;
+}
+
+.clip-image{
+    position: relative;
+    display: grid;
+    justify-content: center;
+}
+
+.animation {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.water, .sun, .saving, .lighting{
+    position: relative;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    min-height: 20vw;
+}
+
+.water > h1, .sun > h1, .saving > h1, .lighting > h1 {
+    position: absolute;
+    font-size: 3em;
+}
+
+
+/* clip image */
+
+.clip-image > h1 {
+    font-size: 11vw;
+    font-weight: bolder;
+    line-height: 1em;
+    letter-spacing: 2px;
+    background-image: url(https://images.unsplash.com/photo-1570284613060-766c33850e00?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent;
+}
+
+
+/* animation: water */
+
+.water > h1:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 2px #03a9f4; 
+}
+.water > h1:nth-child(2){
+    color: #03a9f4;
+    animation: animate-water 4s ease-in-out infinite ;
+}
+
+.water > h1:nth-child(3){
+    color: rgba(3, 169, 244, 0.5);
+
+    animation: animate-water 4s ease-in-out infinite;
+    animation-delay: 300ms;
+}
+
+@keyframes animate-water {
+    0%, 100%{
+        clip-path: polygon(0 44%, 5% 40%, 
+        10% 38%, 16% 39%, 22% 40%, 27% 43%, 
+        31% 45%, 34% 49%, 38% 53%, 41% 57%, 
+        45% 60%, 49% 63%, 53% 66%, 57% 68%, 
+        62% 68%, 66% 68%, 71% 67%, 76% 65%, 
+        81% 62%, 86% 59%, 91% 55%, 95% 51%, 
+        100% 47%, 100% 100%, 0% 100%);
+    }
+    50% {
+        clip-path: polygon(0% 43%, 3% 47%, 
+        6% 51%, 10% 55%, 14% 59%, 19% 62%, 
+        24% 64%, 29% 66%, 31% 66%, 38% 66%, 
+        46% 66%, 53% 64%, 58% 62%, 64% 58%, 
+        68% 54%, 72% 50%, 76% 46%, 78% 43%, 
+        82% 39%, 88% 37%, 93% 37%, 97% 38%, 
+        100% 40%, 100% 100%, 0% 100%);
+    }
+}
+
+/* animation: sun */
+
+.sun > h1:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 2px orange; 
+}
+.sun > h1:nth-child(2){
+    color: orange;
+    animation: animate-sky 5s linear infinite;
+}
+.sun > h1:nth-child(3){
+    color: rgb(255, 221, 0);
+    animation: animate-glow-s 5s linear infinite;
+    filter: blur(15px);
+    
+}
+.sun > h1:nth-child(4){
+    color: rgb(255, 221, 0);
+    animation: animate-glow-l 5s linear infinite;
+    filter: blur(35px);
+    
+}
+.sun > h1:nth-child(5){
+    color: orange;
+    animation: animate-sun 5s linear infinite;
+}
+
+
+@keyframes animate-sun {
+    0%{clip-path: circle(29% at 50% -20%);}
+    50% {clip-path: circle(29% at 50% 50%);}
+    90% {clip-path: circle(29% at 50% 100%);}
+    100% {clip-path: circle(29% at 50% 120%);}
+}
+
+@keyframes animate-glow-s {
+    0%{clip-path: circle(32% at 50% -20%);}
+    50% {clip-path: circle(32% at 50% 50%);}
+    90% {
+        clip-path: circle(32% at 50% 100%);
+        color:transparent;
+    }
+    100% {clip-path: circle(32% at 50% 120%);
+        color:transparent;
+    }
+}
+
+@keyframes animate-glow-l {
+    0%{clip-path: circle(35% at 50% -20%);}
+    50% {clip-path: circle(35% at 50% 50%);}
+    90% {clip-path: circle(35% at 50% 100%);
+        color:transparent;
+    }
+    100% {clip-path: circle(35% at 50% 120%);
+        color:transparent;
+    }
+}
+
+@keyframes animate-sky {
+    0%{color: #c8ecfc;
+        text-shadow: 2px 3px 2px #4ac6fb;
+    }
+    50% {color: #31a7da;}
+    80% {color: #da5831;
+    }
+    90% {color: #004;
+        text-shadow: -2px 5px 3px #004;
+    }
+    100% {color: #004;
+        text-shadow: -2px 5px 3px #004;
+    }
+}
+
+
+/* animation saving */
+
+.saving > h1:nth-child(1){
+    color: transparent; 
+    -webkit-text-stroke: 1px #333; 
+}
+
+.saving > h1:nth-child(1)::before{
+    content: attr(data-text);
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-right: 3px solid rgb(0, 255, 170);
+    overflow: hidden;
+    animation: animate-loading 6s linear infinite;
+}
+
+.saving > h1:nth-child(2){
+    color:rgb(0, 255, 170);
+    -webkit-text-stroke: 1px #333; 
+    animation: animate-loading-color 6s linear infinite;
+}
+
+@keyframes animate-loading {
+    0%, 10%, 100% {width: 0%;}
+    60%, 90% {width: 100%;}
+}
+
+@keyframes animate-loading-color {
+    0%, 10%, 100% {clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);}
+    60%, 90% {clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);}
+}
+
+/* lighting */
+
+.lighting {
+    height: 50vh;
+    color: rgb(0, 0, 110);
+    background-color: #004;
+    background-clip: border-box;
+    
+    
+}
+.lighting > h1 {
+    width: 100%;
+    -webkit-box-reflect: below 0.5px linear-gradient(transparent, #004);
+    line-height: 0.7em;
+    letter-spacing: 15px;
+    outline: none;
+    animation: animate-light 6s ease-in infinite 2s;
+}
+
+@keyframes animate-light {
+    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 85.1%, 86%{
+        color:rgb(0, 0, 110);
+        text-shadow: none;
+    }
+    18.1%, 20.1%, 50%, 60.1%, 65%, 80.1%, 85%, 86.1%, 100%{
+        color: white;
+        text-shadow: 0 0 10px wheat, 
+        0 0 20px wheat, 
+        0 0 40px wheat, 
+        0 0 80px wheat, 
+        0 0 160px wheat;
+    }
+}
+
+/* magic text */
+
+.magical-effect{
+    text-align: center;
+    --purple: purple;
+    --violet: violet;
+    --pink: pink;
+    height: 50vh;
+    color: white;
+    background-color: #004;
+    background-clip: border-box;
+}
+
+.magical-effect > h1 > .magic {
+    display: inline-block;
+    position: relative;
+}
+
+.magical-effect > h1 > .magic > .magic-stars {
+    --size: clamp(20px, 1.5vw, 30px);
+    display: block;
+    height: var(--size);
+    left: var(--star-left);
+    position: absolute;
+    top: var(--star-top);
+    width: var(--size);
+    animation: scale 700ms ease infinite;
+}
+
+.magical-effect > h1 > .magic > .magic-stars > svg{
+    display: block;
+    opacity: 0.7;
+    animation: rotate 1s linear infinite;
+}
+
+.magical-effect > h1 > .magic > .magic-stars > svg > path{
+    fill: var(--violet);
+}
+
+/* magic star */
+@keyframes scale {
+    0%, 100%{transform: scale(0);}
+    50%{transform: scale(1);} 
+}
+
+/* magic star svg */
+@keyframes rotate{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(180deg);}
+}
+
+.magical-effect > h1 > .magic > .magic-text {
+    background: linear-gradient(
+        to right,
+        var(--purple),
+        var(--violet),
+        var(--pink),
+        var(--purple)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+
+    animation: background-pan 3s linear infinite;
+}
+
+@keyframes background-pan {
+    0% {background-position: 0% center;}
+    100% {background-position: -200% center;}
+}
