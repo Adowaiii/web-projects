@@ -1,0 +1,224 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.title{
+    font-family: 'Lucida Sans';
+    display: grid;
+    justify-items: center;
+}
+
+h1 {
+    font-weight: bolder;
+}
+
+a, a:visited {
+    text-decoration: underline dotted #333;
+    color: #333;
+}
+
+a:hover {
+    background-color: #5a5a5a;
+    color: whitesmoke;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: grid;
+    align-content: space-evenly;
+    background: hsl(48, 18%, 83%);
+}
+
+.columns {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: auto auto auto;
+    gap: clamp(8px, 12px, 10px);
+}
+
+.columns div:nth-child(1){
+    width:250px;
+}
+
+.columns div:nth-child(2){
+    width:250px;
+}
+
+.columns div:nth-child(3){
+    width:250px;
+}
+
+.image-border {
+    display: block;
+    background-color: antiquewhite;
+    border: 10px solid transparent;
+    border-image-source: url(bg.jpg);
+    border-image-slice: 100 100 100 100 fill;
+}
+
+.gradient-border-1 {
+    border : 8px solid;
+    padding: 8px;
+    border-image-source: linear-gradient(45deg, orange, turquoise);
+    border-image-slice: 10;
+}
+
+.gradient-border-2 {
+    border-block-start : 5px solid;
+    padding-block-start: 5px;
+    border-image-source: linear-gradient(90deg, orange 50%, teal 50%);
+    border-image-slice: 10;
+}
+
+.gradient-border-3 {
+    border-inline-start: 5px solid;
+    border-block-start: 5px solid;
+    padding:  5px 0 0 5px;
+    border-image-source: radial-gradient(
+        circle at top left,
+        turquoise,
+        orange 30%,
+        transparent 60%);
+    border-image-slice: 1;
+}
+
+
+
+.animation-card-1 {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 250px;
+    
+}
+
+.animation-border-1 > h3 {
+    margin: 0; 
+}
+
+.animation-border-2 > h3 {
+    margin: 0;
+}
+
+.animation-border-3 > h3 {
+    margin: 0;
+}
+
+
+/* border moving */
+.svg-animation-border-1 {
+    position: absolute;
+    width: 240px;
+    height: 280px;
+    fill: transparent;
+    stroke-linecap: round;
+    stroke-width: 5px;
+    stroke-dasharray: 400 100 400 100 1000;
+    stroke-dashoffset: -600px;
+    outline: #c5c4c4 2px solid;
+    outline-offset: -2px;
+}
+
+.svg-animation-border-1:hover {
+    stroke: url(#color-gradient);
+    animation: stroke-move 1s linear infinite;
+    outline:transparent; 
+}
+@keyframes stroke-move {
+    0%{stroke-dashoffset: -100px;}
+    100%{stroke-dashoffset: 400px;}
+}
+
+.animation-border-1 {
+    z-index: -1;
+    position: relative;
+    height: 280px;
+    width:225px !important;
+    padding-top: 16px;
+    padding-inline-start: 6px;
+}
+
+
+/* border color changing */
+.animation-border-2 {
+    position: relative;
+    height: 280px;
+    width: 250px;
+    border : 5px solid;
+    padding: 8px;
+    border-image-source: linear-gradient(45deg, orange, turquoise);
+    border-image-slice: 10;
+    animation: border-in 5s linear infinite;
+}
+@keyframes border-in {
+    0%{border-image-source: linear-gradient(45deg, orange 30%, turquoise 70%);}
+    25%{border-image-source: linear-gradient(-35deg, orange 30%, turquoise 70%);}
+    50%{border-image-source: linear-gradient(-135deg, orange 30%, turquoise 70%);}
+    75%{border-image-source: linear-gradient(-225deg, orange 30%, turquoise 70%);}
+    100% {border-image-source: linear-gradient(45deg, orange 30%, turquoise 70%);}
+}
+
+.animation-border-3 {
+    position: relative;
+    height: 280px;
+    width: 250px;
+    /* border : 8px solid; */
+    padding: 8px;
+    background-image: radial-gradient(circle at top left, turquoise, orange, transparent);
+    animation: color-back  200ms linear forwards;
+}
+
+.animation-border-3:hover {
+    animation: color-fill  200ms linear forwards;
+}
+
+@keyframes color-fill {
+    0%{background-image: radial-gradient(circle at -20% -20%, turquoise 30%, orange, transparent);}
+    10%{background-image: radial-gradient(circle at 10% 10%, turquoise 30%, orange, transparent);}
+    20%{background-image: radial-gradient(circle at 30% 30%, turquoise 30%, orange, transparent);}
+    25%{background-image: radial-gradient(circle at 40% 40%, turquoise 40%, orange, transparent);}
+    30%{background-image: radial-gradient(circle at 50% 50%, turquoise 40%, orange, transparent);}
+    40%{background-image: radial-gradient(circle at 60% 60%, turquoise 40%, orange, transparent);}
+    45%{background-image: radial-gradient(circle at 70% 70%, turquoise 30%, orange, transparent);}
+    50%{background-image: radial-gradient(circle at 80% 80%, turquoise 30%, orange, transparent);}
+    60%{background-image: radial-gradient(circle at 100% 100%, turquoise 30%, orange, transparent);}
+    65%{background-image: radial-gradient(circle at 110% 110%, turquoise 30%, orange, transparent);}
+    70%{background-image: radial-gradient(circle at 120% 120%, turquoise 30%, orange, transparent);}
+    80%{background-image: radial-gradient(circle at 130% 130%, turquoise 30%, orange, transparent);}
+    85%{background-image: radial-gradient(circle at 133% 133%, turquoise 30%, orange, transparent);}
+    90%{background-image: radial-gradient(circle at 135% 135%, turquoise 30%, orange, transparent);}
+    95%{background-image: radial-gradient(circle at 138% 138%, turquoise 30%, orange, transparent);}
+    100%{background-image: radial-gradient(circle at 140% 140%, turquoise 30%, orange, transparent);}
+}
+
+@keyframes color-back {
+    0%{background-image: radial-gradient(circle at 140% 140%, turquoise 30%, orange, transparent);}
+    5%{background-image: radial-gradient(circle at 138% 138%, turquoise 30%, orange, transparent);}
+    10%{background-image: radial-gradient(circle at 135% 135%, turquoise 30%, orange, transparent);}
+    15%{background-image: radial-gradient(circle at 133% 133%, turquoise 30%, orange, transparent);}
+    20%{background-image: radial-gradient(circle at 130% 130%, turquoise 30%, orange, transparent);}
+    30%{background-image: radial-gradient(circle at 120% 120%, turquoise 30%, orange, transparent);}
+    35%{background-image: radial-gradient(circle at 110% 110%, turquoise 30%, orange, transparent);}
+    40%{background-image: radial-gradient(circle at 100% 100%, turquoise 30%, orange, transparent);}
+    50%{background-image: radial-gradient(circle at 80% 80%, turquoise 30%, orange, transparent);}
+    55%{background-image: radial-gradient(circle at 70% 70%, turquoise 30%, orange, transparent);}
+    60%{background-image: radial-gradient(circle at 60% 60%, turquoise 40%, orange, transparent);}
+    70%{background-image: radial-gradient(circle at 50% 50%, turquoise 40%, orange, transparent);}
+    75%{background-image: radial-gradient(circle at 40% 40%, turquoise 40%, orange, transparent);}
+    80%{background-image: radial-gradient(circle at 30% 30%, turquoise 30%, orange, transparent);}
+    90%{background-image: radial-gradient(circle at 10% 10%, turquoise 30%, orange, transparent);}
+    100%{background-image: radial-gradient(circle at -40% -40%, turquoise 30%, orange, transparent);}
+}
+
+.image-list{
+    margin-inline: auto;
+    padding-top: 5em;
+    opacity: 0.65;
+    color:black;
+    font-size: 10px;
+    list-style-type: "🌴";
+}
