@@ -14,6 +14,7 @@ const animate = star => {
     star.style.animation = "";
 }
 
+
 for (const star of document.getElementsByClassName("magic-stars")){
     setTimeout(()=> {
         animate(star);

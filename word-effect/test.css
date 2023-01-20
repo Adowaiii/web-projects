@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Potta+One&display=swap');
+
+body {
+    background: radial-gradient(circle at bottom, hsl(236, 95%, 38%) 0% 20%, hsl(236, 100%, 16%) 100%);
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    margin-inline: auto;
+    margin: 0px;
+}
+
+.lyrics {
+    position: relative;
+    display: inline-block;
+    justify-items: center;
+    text-align: center;
+    height: 80vh;
+    width: 80vw;
+    --17: #FFBB00;
+    --18: #FF66BB;
+    --19: #33DD99;
+    --20: #BB88EE;
+}
+
+.lyrics > h1 {
+    font-family: 'Potta One', cursive;
+    font-size: 7em;
+    background: linear-gradient(
+        to right,
+        var(--17),
+        var(--18) 35%,
+        var(--19) 60%, 
+        var(--20) 85%, 
+        var(--17)
+    );
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+    animation: background-88 5s linear infinite;
+    -webkit-text-stroke: 0.01rem white;
+}
+
+@keyframes background-88 {
+    0% {background-position: 0% center;}
+    100% {background-position: 300% center;}
+}
+
+.lyrics > h1 > .star{
+    --size: clamp(20px, 1.5vw, 30px);
+    display: block;
+    height: var(--size);
+    width: var(--size);
+    top: var(--white-star-top);
+    left:var(--white-star-left);
+    position: absolute;
+    fill: white;
+    animation: scale-star 3s linear infinite;
+}
+
+.lyrics > h1 > .star > svg{
+    display: block;
+    opacity: var(--white-star-opacity);
+    animation: rotate-star 2s linear infinite;
+}
+
+/* star svg */
+@keyframes rotate-star{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+/* star */
+@keyframes scale-star{
+    0%, 100% {transform: scale(0);}
+    50% {transform: scale(1.2);}
+}
+
+.mountain{
+    fill: white;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 40vh;
+    z-index: -1;
+    overflow: hidden;
+    clip-path: polygon(0% 65%, 5% 64%, 9% 65%, 15% 67%, 20% 69%, 26% 70%, 32% 70%, 39% 73%, 46% 75%, 48% 75%, 60% 76%, 64% 78%, 70% 80%, 77% 83%, 85% 85%, 94% 88%, 100% 91%, 100% 100%, 0% 100%);
+}
+
+.mountain-back{
+    fill: white;
+    position: absolute;
+    opacity: 0.5;
+    bottom: 10px;
+    left: 0px;
+    width: 100vw;
+    height: 40vh;
+    z-index: -2;
+    overflow: hidden;
+    transform: rotateY(180deg);
+    clip-path: polygon(0% 65%, 5% 64%, 9% 65%, 15% 67%, 20% 69%, 26% 70%, 32% 70%, 39% 73%, 46% 75%, 48% 75%, 60% 76%, 64% 78%, 70% 80%, 77% 83%, 85% 85%, 94% 88%, 100% 91%, 100% 100%, 0% 100%);
+}
+
+.mountain-deep{
+    fill: white;
+    position: absolute;
+    opacity: 0.2;
+    bottom: 20px;
+    left: 0px;
+    width: 100vw;
+    height: 40vh;
+    z-index: -3;
+    overflow: hidden;
+    clip-path: polygon(0% 65%, 5% 64%, 9% 65%, 15% 67%, 20% 69%, 26% 70%, 32% 70%, 39% 73%, 46% 75%, 48% 75%, 60% 76%, 64% 78%, 70% 80%, 77% 83%, 85% 85%, 94% 88%, 100% 91%, 100% 100%, 0% 100%);
+}
+
+
+.moon{
+    fill: url(#my-cool-gradient) #c0e0f5;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 5vh;
+    left:10vw;
+    overflow: hidden;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.dot-big {
+    display: block;
+    height: 12px;
+    width: 12px;
+    top: var(--back-star-top);
+    left:var(--back-star-left);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px #ffffff;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.dot-med {
+    display: block;
+    height: 8px;
+    width: 8px;
+    top: var(--back-star-top);
+    left:var(--back-star-left);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px #ffffff;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.dot-sm {
+    display: block;
+    height: 5px;
+    width: 5px;
+    top: var(--back-star-top);
+    left:var(--back-star-left);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px #ffffff;
+    border-radius: 50%;
+    position: absolute;
+}
+
