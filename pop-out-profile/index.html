@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Pop Out</title>
 </head>
 <body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+    <script>
+        $(function(){
+        $("#nav-placeholder").load("../nav.html");
+        });
+    </script>
+    <!--end of Navigation bar-->
     <div class="title">
         <h1 style="font-size: large;">Pop Out Profile</h1>
         <a href="https://youtu.be/1zDRqHifoX0">Video Reference</a>

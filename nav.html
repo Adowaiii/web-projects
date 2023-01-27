@@ -1,0 +1,31 @@
+<button class="home-button"><a href="https://adowaiii.github.io/web-projects/index.html"> << Back</a></button>
+
+<style>
+    .home-button{
+        position: absolute;
+        top:1em;
+        left:1em;
+        border: none;
+        padding: 8px;
+        color: #333;
+        background-color: cadetblue;
+        border-radius: 5px;
+    }
+
+    .home-button:hover{
+        background-color: #555;
+        transition: all 0.3s ease-in-out;
+    } 
+
+    .home-button > :is(a, a:visited, a:hover){
+        position: relative;
+        text-decoration: none !important;
+        background-color: transparent;
+    }
+
+    .home-button > :is(a:hover){
+        color:seashell;
+        transition: all 0.3s ease-in-out;
+    }
+
+</style>
