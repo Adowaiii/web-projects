@@ -1,0 +1,46 @@
+// @forward "reset";
+@forward "./base/custom-props";
+@forward "./base/orbit";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1 {
+    font-weight: bolder;
+}
+
+a, a:visited {
+    text-decoration: underline dotted #333;
+    color: #333;
+}
+
+a:hover {
+    background-color: #5a5a5a;
+    color: whitesmoke;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: grid;
+    place-items: center;
+    align-content: space-between;
+    background: hsl(48, 18%, 83%);
+
+    .title{
+        font-family: 'Lucida Sans';
+        display: grid;
+        justify-items: center;
+    }
+
+}
+
+.image-list{
+    margin-inline: auto;
+    opacity: 0.65;
+    color:black;
+    font-size: 10px;
+}

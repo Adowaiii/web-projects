@@ -1,2 +1,2 @@
 # web-projects
-Little projects or practices I made
+Html/CSS(+JS) (hopefully) daily practices.

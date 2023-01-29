@@ -1,6 +1,8 @@
 
 body {
     background: hsl(48, 18%, 83%);
+    display: grid;
+    justify-items: center;
 }
 
 a, a:visited {
@@ -11,4 +13,12 @@ a, a:visited {
 a:hover {
     background-color: #5a5a5a;
     color: whitesmoke;
+}
+
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+li {
+    list-style-type: "\1F4A0";
 }
