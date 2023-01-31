@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Cover Interaction</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+    <script>
+        $(function(){
+        $("#nav-placeholder").load("../nav.html");
+        });
+    </script>
+    <!--end of Navigation bar-->
+    <div class="title">
+        <h1 style="font-size: large;">Card Cover Interaction</h1>
+        <a href="https://codepen.io/hexagoncircle/pen/XWbWKwL">Reference</a>
+    </div>
+    <div class="card-list">
+        <div class="card">
+            <img src="./assets/bg-1.png" alt="">
+            <div class="info">
+                <p>Blue Sky</p>
+                <a href=""><i class="material-icons">open_in_new</i></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assets/bg-2.png" alt="">
+            <div class="info">
+                <p>Herb</p>
+                <a href=""><i class="material-icons">open_in_new</i></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assets/bg-3.png" alt="">
+            <div class="info">
+                <p>Nightlife</p>
+                <a href=""><i class="material-icons">open_in_new</i></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assets/bg-4.png" alt="">
+            <div class="info">
+                <p>Sunset</p>
+                <a href=""><i class="material-icons">open_in_new</i></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assets/bg-5.png" alt="">
+            <div class="info">
+                <p>Midnight</p>
+                <a href=""><i class="material-icons">open_in_new</i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

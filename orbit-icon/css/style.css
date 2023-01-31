@@ -304,11 +304,17 @@ body {
   place-items: center;
   align-content: space-between;
   background: hsl(48deg, 18%, 83%);
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 body .title {
   font-family: "Lucida Sans";
   display: grid;
   justify-items: center;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .image-list {
