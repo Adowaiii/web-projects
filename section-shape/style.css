@@ -1,0 +1,141 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root{
+    --body-bg: hsl(0, 0%, 11%);
+}
+
+.title{
+    font-family: 'Lucida Sans';
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    grid-row: 1;
+}
+
+h1 {
+    font-weight: bolder;
+}
+
+a, a:visited {
+    text-decoration: underline dotted #333;
+    color: #DDD;
+}
+
+a:hover {
+    background-color: #5a5a5a;
+    color: whitesmoke;
+}
+
+html {
+    color-scheme: dark light;  
+}
+
+body {
+    background: var(--body-bg);
+    color: white;
+    min-height: 100vh;
+    line-height: 1.5;
+    margin: 0;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 5em auto; /* define only 2 rows*/
+}
+
+.wrapper {
+    max-width: 50rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.site-title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+}
+
+section {
+    padding-block: 5rem;
+}
+
+.diagonal {
+    --skew-angle: -5deg;
+    --background-color:linear-gradient(
+        45deg,
+        #12c2e9,
+        #c471ed,
+        #f64F59
+    );
+    position: relative;
+    isolation: isolate;
+}
+
+.diagonal::after {
+    content:'';
+    background: var(--background-color);
+    position: absolute;
+    inset: 0;
+    transform: skewY(var(--skew-angle));
+    z-index: -1;
+}
+
+.sharp-waves {
+    --sharp-waves-color:hsl(0, 0%, 11%);
+    --sharp-waves-width: 60px;
+    --sharp-waves-height: 10px;
+    position: relative;
+    color: #333;
+    background: linear-gradient(
+        to right, 
+        #fdc830,
+        #f37335);
+}
+
+.sharp-waves::after,
+.sharp-waves::before {
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: var(--sharp-waves-height);
+    background: var(--sharp-waves-color);
+    -webkit-mask-image: url('./assets/path.svg');
+    -webkit-mask-size: var(--sharp-waves-width) var(--sharp-waves-height);
+            mask-image: url('./assets/path.svg');
+            mask-size: var(--sharp-waves-width) var(--sharp-waves-height);
+}
+
+svg {
+    color: transparent;
+}
+
+.sharp-waves::before{
+    top:0;
+}
+
+.sharp-waves::after{
+    bottom:0px;
+    transform: rotate(.5turn);
+}
+
+
+.wavy{
+    /* mask created with  */
+    /* https://css-generators.com/wavy-shapes/ */
+    background: linear-gradient(
+        to right,
+        #00f260,
+        #0575e6);
+    --mask:
+        radial-gradient(34.73px at 50% 47.70px,#000 99%,#0000 101%) calc(50% - 36px) 0/72px 51% repeat-x,
+        radial-gradient(34.73px at 50% -29.7px,#0000 99%,#000 101%) 50% 18px/72px calc(51% - 18px) repeat-x,
+        radial-gradient(34.73px at 50% calc(100% - 47.70px),#000 99%,#0000 101%) calc(50% - 36px) 100%/72px 51% repeat-x,
+        radial-gradient(34.73px at 50% calc(100% + 29.70px),#0000 99%,#000 101%) 50% calc(100% - 18px)/72px calc(51% - 18px) repeat-x;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+}
