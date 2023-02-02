@@ -40,7 +40,6 @@ body {
     min-height: 100vh;
     line-height: 1.5;
     margin: 0;
-    display: grid;
     justify-content: center;
     grid-template-rows: 5em auto; /* define only 2 rows*/
 }
@@ -104,6 +103,7 @@ section {
     width: 100%;
     height: var(--sharp-waves-height);
     background: var(--sharp-waves-color);
+    border: var(--sharp-waves-color);
     -webkit-mask-image: url('./assets/path.svg');
     -webkit-mask-size: var(--sharp-waves-width) var(--sharp-waves-height);
             mask-image: url('./assets/path.svg');
